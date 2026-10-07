@@ -22,3 +22,7 @@ resultado_teste/
 # Sistema operacional
 .DS_Store
 Thumbs.db
+
+# Logs da aplicação
+logs/
+*.log
