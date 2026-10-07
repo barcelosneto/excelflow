@@ -2,8 +2,10 @@ import pandas as pd
 import argparse
 from pathlib import Path
 import sys
-
+from src.logger import setup_logger
 from src.reader import read_excel_files
+
+
 from src.validator import (
     validate_required_fields,
     validate_dates,
@@ -16,9 +18,14 @@ from src.report import (
     generate_consolidated_report,
     generate_error_report,
 )
+logger = setup_logger()
 
 
 def main(input_dir="input", output_dir="output"):
+
+    logger.info("Iniciando processamento do ExcelFlow")
+    logger.info("Diretório de entrada: %s", input_dir)
+    logger.info("Diretório de saída: %s", output_dir)
 
     input_path = Path(input_dir)
 
